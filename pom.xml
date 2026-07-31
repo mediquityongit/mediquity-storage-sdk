@@ -188,4 +188,20 @@
 
     </developers>
 
+    <distributionManagement>
+
+        <repository>
+
+            <id>github</id>
+
+            <name>GitHub Packages</name>
+
+            <url>
+                https://maven.pkg.github.com/mediq/mediq-storage-sdk
+            </url>
+
+        </repository>
+
+    </distributionManagement>
+
 </project>
