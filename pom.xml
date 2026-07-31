@@ -197,7 +197,7 @@
             <name>GitHub Packages</name>
 
             <url>
-                https://maven.pkg.github.com/mediq/mediq-storage-sdk
+                https://maven.pkg.github.com/mediquityongit/mediq-storage-sdk
             </url>
 
         </repository>
