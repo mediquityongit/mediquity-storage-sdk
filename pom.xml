@@ -9,7 +9,7 @@
 
     <groupId>com.mediq</groupId>
     <artifactId>mediq-storage-sdk</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>Mediq Storage SDK</name>
