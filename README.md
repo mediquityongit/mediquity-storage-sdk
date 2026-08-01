@@ -10,7 +10,7 @@ Configure everything from `application.properties` or `application.yml` — fing
 <dependency>
     <groupId>com.mediq</groupId>
     <artifactId>mediq-storage-sdk</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
 </dependency>
 
 <!-- Required only when storage.provider=oci -->
@@ -32,7 +32,7 @@ JitPack (after tagging a release):
 <dependency>
     <groupId>com.github.mediquityongit</groupId>
     <artifactId>mediquity-storage-sdk</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
 </dependency>
 ```
 

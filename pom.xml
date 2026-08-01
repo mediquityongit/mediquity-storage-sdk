@@ -9,7 +9,7 @@
 
     <groupId>com.mediq</groupId>
     <artifactId>mediq-storage-sdk</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <packaging>jar</packaging>
 
     <name>Mediq Storage SDK</name>
@@ -64,22 +64,20 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!-- OCI (optional for consumers that only use local/s3/azure) -->
+        <!-- OCI is included transitively so HMS only needs mediq-storage-sdk -->
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-objectstorage</artifactId>
             <version>${oci.version}</version>
-            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
             <version>${oci.version}</version>
-            <optional>true</optional>
         </dependency>
 
-        <!-- AWS S3 (optional) -->
+        <!-- AWS S3 (optional — add explicitly only when storage.provider=s3) -->
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>s3</artifactId>
@@ -87,7 +85,7 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Azure Blob (optional) -->
+        <!-- Azure Blob (optional — add explicitly only when storage.provider=azure) -->
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-storage-blob</artifactId>
