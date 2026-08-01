@@ -1,0 +1,170 @@
+{
+  "groups": [
+    {
+      "name": "storage",
+      "type": "com.mediq.storage.config.StorageProperties",
+      "sourceType": "com.mediq.storage.config.StorageProperties",
+      "description": "Mediq enterprise multi-provider object storage settings."
+    }
+  ],
+  "properties": [
+    {
+      "name": "storage.provider",
+      "type": "java.lang.String",
+      "description": "Storage backend: local (default), oci, s3, or azure.",
+      "defaultValue": "local"
+    },
+    {
+      "name": "storage.bucket-name",
+      "type": "java.lang.String",
+      "description": "Shared bucket/container name for cloud providers."
+    },
+    {
+      "name": "storage.namespace",
+      "type": "java.lang.String",
+      "description": "OCI Object Storage namespace (flat / legacy)."
+    },
+    {
+      "name": "storage.tenancy-id",
+      "type": "java.lang.String",
+      "description": "OCI tenancy OCID (flat / legacy)."
+    },
+    {
+      "name": "storage.user-id",
+      "type": "java.lang.String",
+      "description": "OCI user OCID (flat / legacy)."
+    },
+    {
+      "name": "storage.fingerprint",
+      "type": "java.lang.String",
+      "description": "OCI API key fingerprint (flat / legacy)."
+    },
+    {
+      "name": "storage.private-key-path",
+      "type": "java.lang.String",
+      "description": "Path to OCI API private key PEM file (flat / legacy)."
+    },
+    {
+      "name": "storage.private-key",
+      "type": "java.lang.String",
+      "description": "Inline OCI API private key PEM content (flat / legacy)."
+    },
+    {
+      "name": "storage.region",
+      "type": "java.lang.String",
+      "description": "OCI region code, e.g. ap-mumbai-1 (flat / legacy)."
+    },
+    {
+      "name": "storage.local.base-path",
+      "type": "java.lang.String",
+      "description": "Local filesystem root directory for storage keys."
+    },
+    {
+      "name": "storage.oci.namespace",
+      "type": "java.lang.String",
+      "description": "OCI Object Storage namespace."
+    },
+    {
+      "name": "storage.oci.tenancy-id",
+      "type": "java.lang.String",
+      "description": "OCI tenancy OCID."
+    },
+    {
+      "name": "storage.oci.user-id",
+      "type": "java.lang.String",
+      "description": "OCI user OCID."
+    },
+    {
+      "name": "storage.oci.fingerprint",
+      "type": "java.lang.String",
+      "description": "OCI API key fingerprint."
+    },
+    {
+      "name": "storage.oci.private-key-path",
+      "type": "java.lang.String",
+      "description": "Path to OCI API private key PEM file."
+    },
+    {
+      "name": "storage.oci.private-key",
+      "type": "java.lang.String",
+      "description": "Inline OCI API private key PEM content."
+    },
+    {
+      "name": "storage.oci.region",
+      "type": "java.lang.String",
+      "description": "OCI region code."
+    },
+    {
+      "name": "storage.oci.bucket-name",
+      "type": "java.lang.String",
+      "description": "OCI bucket name (overrides storage.bucket-name)."
+    },
+    {
+      "name": "storage.oci.config-profile",
+      "type": "java.lang.String",
+      "description": "Profile name when using ~/.oci/config.",
+      "defaultValue": "DEFAULT"
+    },
+    {
+      "name": "storage.s3.bucket-name",
+      "type": "java.lang.String",
+      "description": "AWS S3 bucket name."
+    },
+    {
+      "name": "storage.s3.region",
+      "type": "java.lang.String",
+      "description": "AWS region."
+    },
+    {
+      "name": "storage.s3.access-key",
+      "type": "java.lang.String",
+      "description": "AWS access key (optional if default credentials chain is used)."
+    },
+    {
+      "name": "storage.s3.secret-key",
+      "type": "java.lang.String",
+      "description": "AWS secret key."
+    },
+    {
+      "name": "storage.s3.endpoint",
+      "type": "java.lang.String",
+      "description": "Custom S3-compatible endpoint (MinIO, LocalStack)."
+    },
+    {
+      "name": "storage.azure.connection-string",
+      "type": "java.lang.String",
+      "description": "Azure Storage connection string."
+    },
+    {
+      "name": "storage.azure.container-name",
+      "type": "java.lang.String",
+      "description": "Azure blob container name."
+    },
+    {
+      "name": "storage.azure.account-name",
+      "type": "java.lang.String",
+      "description": "Azure storage account name."
+    },
+    {
+      "name": "storage.azure.account-key",
+      "type": "java.lang.String",
+      "description": "Azure storage account key."
+    },
+    {
+      "name": "storage.azure.endpoint",
+      "type": "java.lang.String",
+      "description": "Azure blob service endpoint."
+    }
+  ],
+  "hints": [
+    {
+      "name": "storage.provider",
+      "values": [
+        { "value": "local", "description": "Local filesystem (default, no cloud credentials)." },
+        { "value": "oci", "description": "Oracle Cloud Object Storage." },
+        { "value": "s3", "description": "AWS S3 or S3-compatible." },
+        { "value": "azure", "description": "Azure Blob Storage." }
+      ]
+    }
+  ]
+}

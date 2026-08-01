@@ -36,8 +36,8 @@ public class OciStorageProvider  implements StorageProvider {
 
             PutObjectRequest request =
                     PutObjectRequest.builder()
-                            .namespaceName(storageProperties.getNamespace())
-                            .bucketName(storageProperties.getBucketName())
+                            .namespaceName(storageProperties.resolveOciNamespace())
+                            .bucketName(storageProperties.resolveOciBucket())
                             .objectName(storageKey)
                             .putObjectBody(inputStream)
                             .contentType(contentType)
@@ -70,8 +70,8 @@ public class OciStorageProvider  implements StorageProvider {
 
             GetObjectRequest request =
                     GetObjectRequest.builder()
-                            .namespaceName(storageProperties.getNamespace())
-                            .bucketName(storageProperties.getBucketName())
+                            .namespaceName(storageProperties.resolveOciNamespace())
+                            .bucketName(storageProperties.resolveOciBucket())
                             .objectName(storageKey)
                             .build();
 
@@ -105,8 +105,8 @@ public class OciStorageProvider  implements StorageProvider {
 
             GetObjectRequest request =
                     GetObjectRequest.builder()
-                            .namespaceName(storageProperties.getNamespace())
-                            .bucketName(storageProperties.getBucketName())
+                            .namespaceName(storageProperties.resolveOciNamespace())
+                            .bucketName(storageProperties.resolveOciBucket())
                             .objectName(storageKey)
                             .build();
 
@@ -134,8 +134,8 @@ public class OciStorageProvider  implements StorageProvider {
 
             DeleteObjectRequest request =
                     DeleteObjectRequest.builder()
-                            .namespaceName(storageProperties.getNamespace())
-                            .bucketName(storageProperties.getBucketName())
+                            .namespaceName(storageProperties.resolveOciNamespace())
+                            .bucketName(storageProperties.resolveOciBucket())
                             .objectName(storageKey)
                             .build();
 
@@ -156,8 +156,8 @@ public class OciStorageProvider  implements StorageProvider {
 
             objectStorageClient.headObject(
                     HeadObjectRequest.builder()
-                            .namespaceName(storageProperties.getNamespace())
-                            .bucketName(storageProperties.getBucketName())
+                            .namespaceName(storageProperties.resolveOciNamespace())
+                            .bucketName(storageProperties.resolveOciBucket())
                             .objectName(storageKey)
                             .build());
 
@@ -182,8 +182,8 @@ public class OciStorageProvider  implements StorageProvider {
 
             return objectStorageClient.headObject(
                             HeadObjectRequest.builder()
-                                    .namespaceName(storageProperties.getNamespace())
-                                    .bucketName(storageProperties.getBucketName())
+                                    .namespaceName(storageProperties.resolveOciNamespace())
+                                    .bucketName(storageProperties.resolveOciBucket())
                                     .objectName(storageKey)
                                     .build())
                     .getContentLength();
