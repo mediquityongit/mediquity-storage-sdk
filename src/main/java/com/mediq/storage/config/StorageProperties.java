@@ -1,8 +1,8 @@
 package com.mediq.storage.config;
 
-import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.util.StringUtils;
 
@@ -17,7 +17,7 @@ import org.springframework.util.StringUtils;
 @Getter
 @Setter
 @ConfigurationProperties(prefix = "storage")
-public class StorageProperties {
+public class StorageProperties implements InitializingBean {
 
     /**
      * Active provider: local | oci | s3 | azure.
@@ -145,19 +145,29 @@ public class StorageProperties {
         return System.getProperty("java.io.tmpdir") + "/mediq-storage";
     }
 
-    @PostConstruct
+    @Override
+    public void afterPropertiesSet() {
+        validate();
+    }
+
     public void validate() {
         switch (resolveProvider()) {
-            case "oci" -> validateOci();
-            case "s3" -> validateS3();
-            case "azure" -> validateAzure();
-            case "local" -> {
-                // safe default path — no credentials required
-            }
-            default -> throw new IllegalStateException(
-                    "Unsupported storage.provider='"
-                            + provider
-                            + "'. Supported values: local, oci, s3, azure.");
+            case "oci":
+                validateOci();
+                break;
+            case "s3":
+                validateS3();
+                break;
+            case "azure":
+                validateAzure();
+                break;
+            case "local":
+                break;
+            default:
+                throw new IllegalStateException(
+                        "Unsupported storage.provider='"
+                                + provider
+                                + "'. Supported values: local, oci, s3, azure.");
         }
     }
 
